@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div>
-      <h2>footer</h2>
+    <div className='footer' style={{textAlign:"right"}}>
+      <h2 style={{marginTop:"100px"}}>US Kraków 2026</h2>
     </div>
   )
 }

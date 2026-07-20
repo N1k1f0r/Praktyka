@@ -9,15 +9,15 @@ body{
 }
 h1{
   font-size: 64px;
-  padding: 20px 10px;
+  padding: 20px 0;
 }
 h2{
   font-size: 32px;
-  padding: 10px 5px;
+  padding: 10px 0;
 }
 h3{
   font-size: 24px;
-  padding: 10px 5px;
+  padding: 10px 0;
 }
 .cardList{
   display: flex;
@@ -37,5 +37,37 @@ h3{
 .card:hover{
   box-shadow: 5px 10px 10px #8888;
   border-left:5px solid #f66;
-  transform: scale(1.05);
+  transform: scale(0.95);
+}
+.addCard{
+  background-color: #fff;
+  display: block;
+  box-shadow: 5px 5px 5px #8883;
+  border-radius: 20px;
+  padding: 10px;
+  margin:10px;
+  border-left:5px solid #114488;
+  width: 200px;
+  transition: 300ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+.addCard:hover{
+  background-color: #11448888;
+  box-shadow: 5px 10px 10px #8888;
+  transform: scale(0.95);
+  color: #fff;
+
+}
+.main{
+  padding: 50px;
+  min-height: 500px;
+}
+.footer{
+  min-height: 150px;
+  padding: 50px;
+  background-color: #11448888;
+  color:#eee;
 }

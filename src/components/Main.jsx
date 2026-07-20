@@ -3,9 +3,9 @@ import KartotekaList from './KartotekaList'
 
 function Main() {
     return(
-        <>
+        <div className='main'>
             <KartotekaList/>
-        </>
+        </div>
     ) 
 }
 
