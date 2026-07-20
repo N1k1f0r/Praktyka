@@ -1,0 +1,41 @@
+*{
+  margin:0;
+  padding: 0;
+}
+body{
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;;
+  color:#333;
+  background-color: #eee;
+}
+h1{
+  font-size: 64px;
+  padding: 20px 10px;
+}
+h2{
+  font-size: 32px;
+  padding: 10px 5px;
+}
+h3{
+  font-size: 24px;
+  padding: 10px 5px;
+}
+.cardList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  background-color: #fff;
+  display: block;
+  box-shadow: 5px 5px 5px #8883;
+  border-radius: 20px;
+  padding: 10px;
+  margin:10px;
+  border-left:5px solid #114488;
+  width: 200px;
+  transition: 300ms;
+}
+.card:hover{
+  box-shadow: 5px 10px 10px #8888;
+  border-left:5px solid #f66;
+  transform: scale(1.05);
+}
