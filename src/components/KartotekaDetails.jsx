@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, useParams} from 'react-router-dom'
-import data from '../szk01_2024_kart_full_data.json'
+import {data} from './daneKartotek.js';
 function KartotekaDetails() {
   const {regon}=useParams()
   const firma=data.find((item)=>item.regon===regon)
@@ -14,11 +14,11 @@ function KartotekaDetails() {
   }
   return (
   <div>
-      <h2>{firma.n_pelna}</h2>
+      <h2>{firma.nazwa_nk}</h2>
       <p>REGON: <strong>{firma.regon}</strong></p>
       <p>NIP: <strong>{firma.nip}</strong></p>
-      <p>Adres: <strong>{firma.ad1_s}</strong></p>
-      <p>Email: <strong>{firma.e_mail}</strong></p>
+      <p>Adres: <strong>{firma.getAdres()}</strong></p>
+      <p>Email: <strong>{firma.email}</strong></p>
       <Link to="/" className='gohome'>Powrót do listy</Link>
   </div>
   )
