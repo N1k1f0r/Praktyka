@@ -54,7 +54,7 @@ h3{
   border-radius: 20px;
   padding: 10px;
   margin:10px;
-  border-left:5px solid #114488;
+  border-left:5px solid #225496;
   width: 250px;
   transition: 300ms;
   display: flex;
@@ -63,9 +63,10 @@ h3{
   font-size: 40px;
   text-decoration: none;
   color:#333;
+  height: 150px;
 }
 .addCard:hover{
-  background-color: #11448888;
+  background-color: #22549688;
   box-shadow: 0 0 0  #0000;
   transform: scale(0.97);
   color: #fff;
@@ -78,12 +79,12 @@ h3{
 .footer{
   min-height: 150px;
   padding: 50px;
-  background-color: #11448888;
+  background-color: #22549688;
   color:#eee;
 }
 .gohome{
   padding: 10px;
-  background-color: #114488;
+  background-color: #225496;
   opacity: 0.8;
   color: #eee;
   box-shadow: 5px 5px 5px #8883;
@@ -101,7 +102,7 @@ h3{
 } 
 .navbar{
   width: 100%;
-  background-color: #11448888;
+  background-color: #22549688;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -119,7 +120,7 @@ h3{
   font-size: 20px;
 }
 .navbar a:hover{
-  background-color: #114488cc;
+  background-color: #225496cc;
 }
 .tabela{
   overflow-y: auto;
@@ -127,7 +128,7 @@ h3{
   max-width: 100%;
   max-height: 100%;
   box-sizing: border-box;
-  border: solid 1px #11448833;
+  border: solid 1px #22549633;
   box-shadow: 5px 5px 5px #8883;
 
 }
@@ -137,16 +138,19 @@ h3{
   border-collapse: collapse;
 }
 .tabela th{
-  background-color: #114488cc;
+  background-color: #225496ee;
   padding: 10px;
   color: #eee;
   white-space: nowrap;
 }
 .tabela td{
-  border-right: solid 1px #11448833;
-  border-bottom: solid 1px #11448833;
+  border-right: solid 1px #22549633;
+  border-bottom: solid 1px #22549633;
   min-width: 50px;
   text-align: center;
   padding: 10px;
   background-color: #fafafa;
+}
+strong{
+  color:#225496;
 }
