@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function AddKartotekaItem() {
   return (
-    <div className='addCard'>
+    <Link to="/add" className='addCard'>
         <p>+</p>
-    </div>
+    </Link>
   )
 }
 

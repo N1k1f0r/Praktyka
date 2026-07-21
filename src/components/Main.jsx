@@ -3,7 +3,7 @@ import KartotekaList from './KartotekaList'
 
 function Main() {
     return(
-        <div className='main'>
+        <div>
             <KartotekaList/>
         </div>
     ) 
