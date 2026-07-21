@@ -1,0 +1,64 @@
+input,select{
+    min-width: 250px;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: solid 1px #11448855;
+    box-shadow: 2px 2px 5px #8883;
+    font-family: inherit;
+    color:#333;
+    box-sizing: border-box;
+}
+
+.formWrapper{
+    margin: auto;
+    max-width: 1000px;
+}
+.form-div-2{
+    color:#fff;
+    background-color: #114488aa;
+    padding: 20px;
+}
+.form-div-3b .zakladka {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-bottom: -1px;
+    margin-right: 4px;
+
+}
+.form-div-2 select{
+    margin-bottom: 0;
+}
+.form-div-4{
+    margin-top: 50px;
+    display:flex;
+    justify-content: space-between;
+}
+input[type='checkbox']{
+    min-width: 0px;
+    width:15px;
+    height: 15px;
+}
+button{
+    padding: 7px 10px;
+    border-radius: 5px;
+    border:none;
+    box-shadow: 2px 2px 5px #8883;
+    background-color: #114488cc;
+    color: #eee;
+    margin-right: 5px;
+    transition: 300ms;
+}
+button:hover{
+    background-color: #114488;
+
+}
+textarea{
+    resize: none;
+    height: 100px;
+    width: 350px;
+    font-family: inherit;
+    box-sizing: border-box;
+    padding: 7px;
+}

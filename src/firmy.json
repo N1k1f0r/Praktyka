@@ -1,0 +1,122 @@
+[
+  {
+    "regon": "102938475",
+    "nazwa": "Alfa Logistics Sp. z o.o.",
+    "nip": "1029384756",
+    "miasto": "Szczecin",
+    "kodPocztowy": "70-100",
+    "ulica": "Gdańska 44",
+    "telefon": "91 444 55 66",
+    "email": "biuro@alfalogistics.pl",
+    "uwagi": "Sprawozdanie finansowe za 2023 r. załączone.",
+    "notatki": ""
+  },
+  {
+    "regon": "564738291",
+    "nazwa": "Beta Consulting Anna Nowak",
+    "nip": "5647382",
+    "miasto": "Lublin",
+    "kodPocztowy": "20-002",
+    "ulica": "Krakowskie Przedmieście 12/4",
+    "telefon": "81 333 22 11",
+    "email": "anna.nowak@betaconsulting.pl",
+    "uwagi": "Oczekujące na wyjaśnienie braków.",
+    "notatki": "NIP ma tylko 7 cyfr, poprosić o poprawę przy najbliższym kontakcie."
+  },
+  {
+    "regon": "192837465",
+    "nazwa": "Gamma Medical S.A.",
+    "nip": "1122334455",
+    "miasto": "Łódź",
+    "kodPocztowy": "90-200",
+    "ulica": "Piotrkowska 100",
+    "telefon": "42 111 00 99",
+    "email": "kontakt@gammamedical.pl",
+    "uwagi": "Dane potwierdzone w systemie REGON.",
+    "notatki": "Klient kluczowy (VIP)."
+  },
+  {
+    "regon": "918273645",
+    "nazwa": "Delta Services Sp. k.",
+    "nip": "99988877766",
+    "miasto": "Katowice",
+    "kodPocztowy": "40-001",
+    "ulica": "Korfantego 2",
+    "telefon": "32 999 88 77",
+    "email": "info@deltaservices.com",
+    "uwagi": "Błąd walidacji w systemie zewnętrznym.",
+    "notatki": "NIP ma 11 cyfr (prawdopodobnie wpisano literówkę)."
+  },
+  {
+    "regon": "223344556",
+    "nazwa": "Epsilon IT Systems",
+    "nip": "6677889900",
+    "miasto": "Rzeszów",
+    "kodPocztowy": "35-005",
+    "ulica": "Rejtana 33",
+    "telefon": "17 444 33 22",
+    "email": "hello@epsilon.it",
+    "uwagi": "",
+    "notatki": "Koordynator merytoryczny: Tomasz K."
+  },
+  {
+    "regon": "665544332",
+    "nazwa": "Zeta Trade Hurtownia",
+    "nip": "1231231230",
+    "miasto": "Białystok",
+    "kodPocztowy": "15-100",
+    "ulica": "Lipowa 18",
+    "telefon": "85 777 66 55",
+    "email": "hurt@zetatrade.pl",
+    "uwagi": "Wysłano przypomnienie o sprawozdaniu (12.06).",
+    "notatki": ""
+  },
+  {
+    "regon": "111222333",
+    "nazwa": "Omega Construction S.C.",
+    "nip": "123",
+    "miasto": "Gdynia",
+    "kodPocztowy": "81-300",
+    "ulica": "Świętojańska 50",
+    "telefon": "58 222 11 00",
+    "email": "biuro@omegaconstruction.pl",
+    "uwagi": "Zawieszenie działalności wg CEIDG.",
+    "notatki": "Zdecydowanie błędny NIP - uzupełniono tylko testowo."
+  },
+  {
+    "regon": "444555666",
+    "nazwa": "Sigma Marketing Agencja",
+    "nip": "9080706050",
+    "miasto": "Bydgoszcz",
+    "kodPocztowy": "85-001",
+    "ulica": "Gdańska 15",
+    "telefon": "52 888 99 00",
+    "email": "hello@sigmamarketing.pl",
+    "uwagi": "Dokumentacja kompletna.",
+    "notatki": "Brak uwag."
+  },
+  {
+    "regon": "777888999",
+    "nazwa": "Teta Edukacja Centrum Szkoleniowe",
+    "nip": "5544332211",
+    "miasto": "Toruń",
+    "kodPocztowy": "87-100",
+    "ulica": "Szeroka 5",
+    "telefon": "56 333 44 55",
+    "email": "sekretariat@tetaedukacja.pl",
+    "uwagi": "Wydano zgodę na przedłużenie terminu.",
+    "notatki": ""
+  },
+  {
+    "regon": "101010101",
+    "nazwa": "Kappa Gastro",
+    "nip": "00000",
+    "miasto": "Kielce",
+    "kodPocztowy": "25-001",
+    "ulica": "Sienkiewicza 30",
+    "telefon": "41 555 66 77",
+    "email": "manager@kappagastro.pl",
+    "uwagi": "Niekompletne dane teleadresowe.",
+    "notatki": "Błędny NIP, brak dokładnego adresu."
+  }
+]

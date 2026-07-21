@@ -30,14 +30,21 @@ h3{
   border-radius: 20px;
   padding: 10px;
   margin:10px;
-  border-left:5px solid #114488;
-  width: 200px;
+  width: 250px;
+  height: 150px;
   transition: 300ms;
+}
+.poprawne{
+  
+  border-left:5px solid #5c5;
+}
+.bledne{
+  
+  border-left:5px solid #f66;
 }
 .card:hover{
   box-shadow: 0 0 0 #0000;
   /* box-shadow: 5px 10px 10px #8888; */
-  border-left:5px solid #f66;
   transform: scale(0.97);
 }
 .addCard{
@@ -48,7 +55,7 @@ h3{
   padding: 10px;
   margin:10px;
   border-left:5px solid #114488;
-  width: 200px;
+  width: 250px;
   transition: 300ms;
   display: flex;
   justify-content: center;

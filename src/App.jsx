@@ -8,7 +8,8 @@ import Navbar from './components/Navbar';
 import Tabela from './components/Tabela.jsx';
 import KartotekaDetails from './components/KartotekaDetails';
 import AddKartotekaItem from './components/AddKartotekaItem';
-import data from './szk01_2024_kart_full_data.json'
+import KartotekaEdit from './components/KartotekaEdit.jsx';
+import {data} from './components/daneKartotek.js'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Main/>}/>
         <Route path="/kartoteka/:regon" element={<KartotekaDetails/>}/>
         <Route path="/kartoteka/dodaj" element={<AddKartotekaItem/>}/>
+        <Route path="/kartoteka/edytuj" element={<KartotekaEdit/>}/>
         <Route path='/tabela' element={<Tabela data={data}/>}/>
       </Routes>    
       </div>
