@@ -3,7 +3,7 @@ input,select{
     padding: 7px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: solid 1px #11448855;
+    border: solid 1px #22549655;
     box-shadow: 2px 2px 5px #8883;
     font-family: inherit;
     color:#333;
@@ -16,12 +16,12 @@ input,select{
 }
 .form-div-2{
     color:#fff;
-    background-color: #114488aa;
+    background-color: #225496aa;
     padding: 20px;
 }
 .form-div-3b .zakladka {
     padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: solid #22549655 1px;
     cursor: pointer;
     margin-bottom: -1px;
     margin-right: 4px;
@@ -45,13 +45,13 @@ button{
     border-radius: 5px;
     border:none;
     box-shadow: 2px 2px 5px #8883;
-    background-color: #114488cc;
+    background-color: #225496cc;
     color: #eee;
     margin-right: 5px;
     transition: 300ms;
 }
 button:hover{
-    background-color: #114488;
+    background-color: #225496;
 
 }
 textarea{
@@ -61,4 +61,6 @@ textarea{
     font-family: inherit;
     box-sizing: border-box;
     padding: 7px;
+    border-radius: 5px;
+    border:solid #22549655 1px;
 }

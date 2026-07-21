@@ -165,10 +165,10 @@ function KartotekaEdit() {
             </div>
           </fieldset>
           <fieldset className="form-div-3b "style={{border:'none', width:'50%'}}>
-            <div style={{ display: 'flex', borderBottom: '1px solid #ccc'}}>
+            <div style={{ display: 'flex', borderBottom: 'solid #22549655 1px'}}>
               
               <label className="zakladka" style={{
-                borderBottom: aktywnaZakladka === 'wysylka' ? 'none' : '1px solid #ccc',
+                borderBottom: aktywnaZakladka === 'wysylka' ? 'none' : 'solid #22549655 1px',
                 backgroundColor: aktywnaZakladka === 'wysylka' ? '#fff' : '#eee'
               }}>
                 <input 
@@ -181,7 +181,7 @@ function KartotekaEdit() {
               </label>
 
               <label className="zakladka" style={{
-                borderBottom: aktywnaZakladka === 'zrodla' ? 'none' : '1px solid #ccc',
+                borderBottom: aktywnaZakladka === 'zrodla' ? 'none' : 'solid #22549655 1px',
                 backgroundColor: aktywnaZakladka === 'zrodla' ? '#fff' : '#eee'
               }}>
                 <input 
@@ -194,7 +194,7 @@ function KartotekaEdit() {
               </label>
 
               <label className="zakladka" style={{
-                borderBottom: aktywnaZakladka === 'historia' ? 'none' : '1px solid #ccc',
+                borderBottom: aktywnaZakladka === 'historia' ? 'none' : 'solid #22549655 1px',
                 backgroundColor: aktywnaZakladka === 'historia' ? '#fff' : '#eee'
                 }}>
                 <input 
@@ -208,7 +208,7 @@ function KartotekaEdit() {
             </div>
 
             {/* --- Ramka z zawartością (używamy atrybutu hidden) --- */}
-            <div style={{ border: '1px solid #ccc', borderTop: 'none', padding: '15px', minHeight: '100px', backgroundColor:'#fff' }}>
+            <div style={{ border: 'solid #22549655 1px', borderTop: 'none', padding: '15px', minHeight: '100px', backgroundColor:'#fff' }}>
               
               <div hidden={aktywnaZakladka !== 'wysylka'}>
                 <select name="szablon_pism" id="szablon_pism">
