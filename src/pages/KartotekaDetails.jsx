@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, useParams} from 'react-router-dom'
-import {data} from './daneKartotek.js';
+import {data} from '../data/daneKartotek.js';
 function KartotekaDetails() {
   const {regon}=useParams()
   const firma=data.find((item)=>item.regon===regon)
@@ -53,6 +53,7 @@ function KartotekaDetails() {
     <p><strong>Uwagi:</strong> {firma.uwagi || 'Brak uwag'}</p>
     <p><strong>Notatki:</strong> {firma.notatki || 'Brak notatek'}</p>
   </div>
+  <Link to={`/kartoteka/${firma.regon}/edytuj`} className='gohome'>Edytuj</Link>
   <Link to="/" className='gohome'>Powrót do listy</Link>
 </div>
   )

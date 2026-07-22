@@ -126,7 +126,7 @@ h3{
   overflow-y: auto;
   overflow-x: auto;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 750px;
   box-sizing: border-box;
   border: solid 1px #22549633;
   box-shadow: 5px 5px 5px #8883;
@@ -142,6 +142,7 @@ h3{
   padding: 10px;
   color: #eee;
   white-space: nowrap;
+  cursor: pointer;
 }
 .tabela td{
   border-right: solid 1px #22549633;
@@ -150,7 +151,20 @@ h3{
   text-align: center;
   padding: 10px;
   background-color: #fafafa;
+  transition: 300ms;
+}
+.tabela tr:hover td{
+  background-color: #22549611;
 }
 strong{
   color:#225496;
+}
+.filtry input{
+  margin-left: 10px;
+}
+th{
+  position: relative;
+}
+th input{
+  width:50px ;
 }

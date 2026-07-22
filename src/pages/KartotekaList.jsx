@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import {data}from "./daneKartotek"
-import KartotekaItem from './KartotekaItem'
-import AddKartotekaItem from './AddKartotekaItem'
+import {data}from "../data/daneKartotek"
+import KartotekaItem from '../components/KartotekaItem'
+import AddKartotekaItem from '../components/AddKartotekaItem'
 
 function KartotekaList() {
   const [pokazPoprawne, setPokazPoprawne] = useState(true);
@@ -24,6 +24,7 @@ function KartotekaList() {
             type="checkbox" 
             checked={pokazPoprawne} 
             onChange={(e) => setPokazPoprawne(e.target.checked)} 
+            style={{marginRight:'6px'}}
           />
           Pokaż poprawne
         </label>
@@ -32,7 +33,8 @@ function KartotekaList() {
           <input 
             type="checkbox" 
             checked={pokazBledne} 
-            onChange={(e) => setPokazBledne(e.target.checked)} 
+            onChange={(e) => setPokazBledne(e.target.checked)}  
+            style={{marginRight:'6px'}}
           />
           Pokaż błędne
         </label>

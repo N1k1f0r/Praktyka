@@ -8,7 +8,8 @@ function Navbar() {
         <Link to="/">Kartoteka</Link>
         <Link to="/tabela">Tabela danych</Link>
         <Link to="kartoteka/edytuj">Edycja</Link>
-
+        <Link to="/tabela2">Tabela danych2</Link>
+        <Link to="/tabela3">Tabela danych3</Link>
     </div>
   )
 }

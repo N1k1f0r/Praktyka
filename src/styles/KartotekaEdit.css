@@ -25,6 +25,7 @@ input,select{
     cursor: pointer;
     margin-bottom: -1px;
     margin-right: 4px;
+    /* box-shadow: 2px 2px 5px #8883; */
 
 }
 .form-div-2 select{
@@ -63,4 +64,5 @@ textarea{
     padding: 7px;
     border-radius: 5px;
     border:solid #22549655 1px;
+    box-shadow: 2px 2px 5px #8883;
 }

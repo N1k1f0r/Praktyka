@@ -1,4 +1,4 @@
-import daneZPliku from '../firmy2.json'
+import daneZPliku from '../firmy3.json'
 export const data=daneZPliku.map((firma)=>{
     return{
         ...firma,
