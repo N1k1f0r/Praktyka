@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 import Navbar from './components/Navbar';
 import Tabela from './components/Tabela.jsx';
 import Tabela2 from './components/Tabela2.jsx';
-import Tabela3 from './components/Tabela3.jsx';
+import Tabela3 from './pages/Tabela3.jsx';
 import KartotekaDetails from './pages/KartotekaDetails.jsx';
 import AddKartotekaItem from './components/AddKartotekaItem';
 import KartotekaEdit from './pages/KartotekaEdit.jsx';

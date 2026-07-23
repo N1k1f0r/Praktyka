@@ -174,7 +174,7 @@ function KartotekaEdit() {
 
         <div className='form-div-2' style={{ display: 'flex', justifyContent: 'space-between', margin: '30px 0' }}>
           <div>
-            <label>Status </label>
+            <label>Status: </label>
             <select name="status" id="status" value={formData.status || ''} onChange={handleChange}>
               <option value="01">01 - Sprawozdanie zatwierdzone</option>
               <option value="02">02 - Sprawozdanie niezatwierdzone</option>
