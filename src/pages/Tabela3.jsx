@@ -16,6 +16,9 @@ function Tabela3({ data }) {
     const [columnFilters, setColumnFilters] = useState([]);
     const [columnVisibility,setColumnVisibility]=useState({});
     const [isColumnModalOpen,setIsColumnModalOpen]=useState(false);
+    const [isFilterModalOpen, setIsFilterModalOpen]=useState(false);
+    const [activeFilterCols, setActiveFilterCols] = useState(['regon','nazwa_nsk','miasto','ulica']);
+    const [selectedNewFilter, setSelectedNewFilter]=useState('');
 
     const columns = useMemo(() => [
         {
@@ -54,6 +57,19 @@ function Tabela3({ data }) {
     const areAllVisible=table.getAllLeafColumns()
         .filter(col=>col.id!=='wybor')
         .every(col=>col.getIsVisible())
+    const availableFilterColumns = table.getAllLeafColumns().filter(col=>{
+        return col.id !=='wybor' && !activeFilterCols.includes(col.id)
+    })
+    const handleAddFilter= () => {
+        if(selectedNewFilter && !activeFilterCols.includes(selectedNewFilter)){
+            setActiveFilterCols([...activeFilterCols, selectedNewFilter])
+            setSelectedNewFilter('')
+        }
+    }
+    const handleRemoveFilter = (colId)=>{
+        table.getColumn(colId)?.setFilterValue(undefined)
+        setActiveFilterCols(activeFilterCols.filter(id=>id!==colId))
+    }
 
     return (
         <div className="formWrapper" style={{ maxWidth: '95%' }}>
@@ -102,33 +118,23 @@ function Tabela3({ data }) {
             </div>
             <div style={{display:'flex', justifyContent:'space-between', width:'100%'}}>                
                 <div className="filtry" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', marginBottom: '15px' }}>
-                    <label>REGON
-                        <input style={{ minWidth: '80px', padding: '5px' }} 
-                            value={(table.getColumn('regon')?.getFilterValue() || '')}
-                            onChange={e => table.getColumn('regon')?.setFilterValue(e.target.value)}
-                        />
-                    </label>
-                    <label>Nazwa Skrócona
-                        <input style={{ minWidth: '120px', padding: '5px' }} 
-                            value={(table.getColumn('nazwa_nsk')?.getFilterValue() || '')}
-                            onChange={e => table.getColumn('nazwa_nsk')?.setFilterValue(e.target.value)}
-                        />
-                    </label>
-                    <label>Miasto
-                        <input style={{ minWidth: '100px', padding: '5px' }} 
-                            value={(table.getColumn('miasto')?.getFilterValue() || '')}
-                            onChange={e => table.getColumn('miasto')?.setFilterValue(e.target.value)}
-                        />
-                    </label>
-                    <label>Ulica
-                        <input style={{ minWidth: '100px', padding: '5px' }} 
-                            value={(table.getColumn('ulica')?.getFilterValue() || '')}
-                            onChange={e => table.getColumn('ulica')?.setFilterValue(e.target.value)}
-                        />
-                    </label>
+                    {activeFilterCols.map(colId=>{
+                        const col = table.getColumn(colId);
+                        if(!col) return null;
+                        const headerName= typeof col.columnDef.header === ' string' ? col.columnDef.header : col.id
+                        return( 
+                            <label key={colId} style={{display: 'flex', alignItems:'center', gap:'5px', fontWeight:'bold'}}>
+                                {headerName}
+                                <input style={{ minWidth: '80px', padding: '5px' }} 
+                                    value={(col.getFilterValue() || '')}
+                                    onChange={e =>col.setFilterValue(e.target.value)}
+                                    />
+                            </label>
+                        )
+                    })}
                 </div>
                 <div>
-                    <button type="button" >Edytuj filtry</button>
+                    <button type="button" onClick={()=>setIsFilterModalOpen(true)}>Edytuj filtry</button>
                     <button type="button" onClick={()=>setIsColumnModalOpen(true)}>Edytuj liste wyświetlanych kolumn</button>
                 </div>
             </div>
@@ -158,7 +164,6 @@ function Tabela3({ data }) {
                             type='button'
                             className='btn-secondary'
                             onClick={()=>{
-                                // table.toggleAllColumnsVisible(true)}
                                 table.getAllLeafColumns().forEach(col=>{
                                     if(col.id!=='wybor'){
                                         col.toggleVisibility(!areAllVisible)
@@ -176,6 +181,76 @@ function Tabela3({ data }) {
                     </div>
                 </div>
             </div>
+            )}
+            {isFilterModalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content" style={{maxWidth:'480px'}}>
+                        <h3>Aktywne filtry kolumn</h3>
+                        <div className="column-list" style={{maxHeight:'45vh'}}>
+                            {activeFilterCols.length===0?(
+                                <p style={{textAlign:'center',color:'#888',margin:'20px 0'}}>Brak aktywnych pól filtrów. Dodaj filtr poniżej</p>
+                            ):(
+                                activeFilterCols.map(colId=>{
+                                    const col = table.getColumn(colId)
+                                    if(!col) return null
+                                    const headerName=typeof col.columnDef.header==='string'?col.columnDef.header:col.id
+                                    return(
+                                        <div key={colId} className="filter-item">
+                                            <span style={{fontWeight:'bold', width:'130px',fontSize:'14px'}}>{headerName}</span>
+                                            <input 
+                                            type="text" 
+                                            placeholder={'Filtruj '+String(headerName).toLocaleLowerCase() + '...'} 
+                                            value={(col.getFilterValue()||'')}
+                                            onChange={e=>col.setFilterValue(e.target.value)}
+                                            style={{flex:1,padding:'6px', border:'1px solid #ccc', borderRadius:'4px'}}/>
+                                            <button
+                                                type='button'
+                                                className='btn-remove'
+                                                onClick={()=>handleRemoveFilter(colId)}
+                                                title="Usuń ten filtr z paska"
+                                            >✕</button>
+                                        </div>
+                                    )
+                                })
+                            )}
+
+                        </div>
+                        <div className="add-filter-row">
+                            <select 
+                                value={selectedNewFilter}
+                                onChange={e=> setSelectedNewFilter(e.target.value)}
+                            >
+                                <option value="">-- Wybierz kolumnę do dodania --</option>
+                                {availableFilterColumns.map(col=>(
+                                    <option key={col.id} value={col.id}>
+                                        {typeof col.columnDef.header==='string'?col.columnDef.header:col.id}
+                                    </option>
+                                ))}
+                            </select>
+                            <button 
+                                type="button"
+                                className="btn-primary"
+                                onClick={handleAddFilter}
+                                disabled={!selectedNewFilter}
+                                style={{padding:'8px 15px', opacity: selectedNewFilter?1:0.5}}
+                            >+ Dodaj</button>
+                        </div>
+                        <div className="modal-actions" style={{marginTop:'20px'}}>
+                            <button 
+                                type="button"
+                                className='btn-secondary'
+                                onClick={()=>{
+                                    table.resetColumnFilters();
+                                }}
+                            >Wyczyść wartości</button>
+                            <button
+                                type='button'
+                                className='btn-primary'
+                                onClick={()=>setIsFilterModalOpen(false)}
+                            >Gotowe</button>
+                        </div>
+                    </div>
+                </div>
             )}
             <div className="tabela">
                 <table style={{ width: '100%' }}>
