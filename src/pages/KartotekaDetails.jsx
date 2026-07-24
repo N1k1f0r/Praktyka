@@ -27,7 +27,7 @@ function KartotekaDetails() {
     </div>
     <div>
       <h3>Adresy</h3>
-      <p>Siedziba: <strong>{firma.getAdres()}</strong></p>
+      <p>Siedziba: <strong>{firma.ulica}, {firma.miasto} {firma.kodPocztowy}</strong></p>
       <p>Korespondencyjny: <strong>{firma.ulica_s}, {firma.miasto_s}</strong></p>
     </div>
   </div>

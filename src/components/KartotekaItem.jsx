@@ -11,7 +11,7 @@ function KartotekaItem({dane}) {
         <div className={`card ${status}`}>
             <p>Regon: {dane.regon}</p>
             <h3>{dane.nazwa_nk}</h3> 
-            <p>{dane.getAdres()}</p>
+            <p>{dane.ulica}, {dane.miasto} {dane.kodPocztowy}</p>
         </div>
     </Link>
   )
