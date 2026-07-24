@@ -205,12 +205,7 @@ function Tabela3({ data }) {
                         )
                     })}
                 </div>
-                <div style={{display:'flex', flexDirection:'column', gap:'10px', paddingBottom:'5px'}}>
-                    <button type="button" onClick={()=>setIsFilterModalOpen(true)}>Edytuj filtry</button>
-                    <button type="button" onClick={()=>setIsColumnModalOpen(true)}>Edytuj liste wyświetlanych kolumn</button>
-                </div>
-            </div>
-            <div className="coordinator-menu-container" ref={menuRef}>
+                 <div className="coordinator-menu-container" ref={menuRef}>
                 <button 
                     type="button" 
                     className={`coordinator-menu-btn ${isCoordinatorMenuOpen ? 'active' : ''}`}
@@ -247,6 +242,8 @@ function Tabela3({ data }) {
                     </div>
                 )}
             </div>
+            </div>
+           
             {isColumnModalOpen&&(
             <div className='modal-overlay'>
                 <div className="modal-content">
