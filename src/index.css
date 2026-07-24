@@ -382,3 +382,22 @@ th input{
   border-left-color: #225496;
   color: #000;
 }
+
+
+/* Pasek edycji statusów nad tabelą */
+.status-edit-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.status-edit-bar span {
+  font-size: 14px;
+}

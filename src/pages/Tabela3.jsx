@@ -9,6 +9,7 @@ import {
 } from '@tanstack/react-table';
 import '../index.css';
 import '../styles/KartotekaEdit.css';
+const STATUS_OPTIONS = ['Aktywny', 'Zawieszony', 'W likwidacji'];
 
 function Tabela3({ data }) {
     const [sorting, setSorting] = useState([]);
@@ -20,7 +21,26 @@ function Tabela3({ data }) {
     const [activeFilterCols, setActiveFilterCols] = useState(['regon','nazwa_nsk','miasto','ulica']);
     const [selectedNewFilter, setSelectedNewFilter]=useState('');
     const [isCoordinatorMenuOpen, setIsCoordinatorMenuOpen]=useState(false);
-    const menuRef = useRef(null)
+    const menuRef = useRef(null);
+    const [isStatusEditing, setIsStatusEditing]=useState(false);
+    const [editedStatuses, setEditedStatuses]=useState({});
+
+    const handleStatusChange = (rowId, value)=>{
+        setEditedStatuses(prev =>({
+            ...prev,
+            [rowId]:value
+        }))
+    }
+
+    const handleSaveStatuses = ()=>{
+        console.log("Zapisane statusy: ",editedStatuses)
+        alert('Zapisano zmiany dla '+Object.keys(editedStatuses).length+' wierszy!')
+        setIsStatusEditing(false)
+    }
+    const handleCancelStatusEdit=()=>{
+        setEditedStatuses({})
+        setIsStatusEditing(false)
+    }
 
     useEffect(()=>{
         function handleClickOutside(event){
@@ -40,7 +60,35 @@ function Tabela3({ data }) {
             enableSorting: false,
         },
         { header: 'regon', accessorKey: 'regon' },
-        { header: 'status', accessorKey: 'status' },
+        { 
+            header: 'status', 
+            accessorKey: 'status', 
+            cell:({row,getValue})=>{
+                const initialValue = getValue()||'';
+                const currentValue = editedStatuses[row.id]!==undefined?editedStatuses[row.id]:initialValue
+                if(!isStatusEditing){
+                    return currentValue
+                }
+                return(
+                    <select
+                        value={currentValue}
+                        onChange={(e)=>handleStatusChange(row.id,e.target.value)}
+                        style={{
+                            width:'100%',
+                            minWidth:'110px',
+                            padding:'5px',
+                            margin:'0',
+                            border:'1px solid #225496',
+                            borderRadius: '4px'
+                        }}
+                    >
+                        {STATUS_OPTIONS.map(opt=>(
+                            <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                    </select>
+                )
+            }   
+         },
         { header: 'RA', accessorKey: 'ra' },
         { header: 'Nazwa Skrócona', accessorKey: 'nazwa_nsk' },
         { header: 'Kod', accessorKey: 'kodPocztowy' },
@@ -50,7 +98,7 @@ function Tabela3({ data }) {
         { header: 'Telefon kier', accessorKey: 'tl_kier' },
         { header: 'telefon nr', accessorKey: 'telefon' },
         { header: 'Email OZS', accessorKey: 'email_ozs' },
-    ], []);
+    ], [isStatusEditing, editedStatuses]);
 
     const table = useReactTable({
         data: data || [],
@@ -81,7 +129,7 @@ function Tabela3({ data }) {
     const handleRemoveFilter = (colId)=>{
         table.getColumn(colId)?.setFilterValue(undefined)
         setActiveFilterCols(activeFilterCols.filter(id=>id!==colId))
-    }
+    }    
 
     return (
         <div className="formWrapper" style={{ maxWidth: '95%' }}>
@@ -168,12 +216,10 @@ function Tabela3({ data }) {
                             <li onClick={() => { setIsColumnModalOpen(true); setIsCoordinatorMenuOpen(false); }}>
                                 edytuj listę kolumn tabeli
                             </li>
-                            
-                            {/* Opcjonalne dodatkowe pozycje ze zdjęcia */}
                             <li onClick={() => setIsCoordinatorMenuOpen(false)}>
                                 przydzielanie jednostek
                             </li>
-                            <li onClick={() => setIsCoordinatorMenuOpen(false)}>
+                            <li onClick={() =>{setIsStatusEditing(true);setIsCoordinatorMenuOpen(false)}}>
                                 aktualizacja statusów
                             </li>
                             <li onClick={() => setIsCoordinatorMenuOpen(false)}>
@@ -303,7 +349,21 @@ function Tabela3({ data }) {
                     </div>
                 </div>
             )}
-            
+            {isStatusEditing && (
+                <div className="status-edit-bar">
+                    <span>
+                        <strong>Tryb edycji statusów aktywny:</strong>
+                    </span>
+                    <div style={{display:'flex', gap:'10px'}}>
+                        <button type='button' className='btn-primary' onClick={handleSaveStatuses}>
+                            Zapisz statusy
+                        </button>
+                        <button type='button' className='btn-secondary' onClick={handleCancelStatusEdit}>
+                            Anuluj
+                        </button>
+                    </div>
+                </div>
+            )}
             <div className="tabela">
                 <table style={{ width: '100%' }}>
                     <thead>
