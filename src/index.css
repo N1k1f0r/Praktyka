@@ -169,8 +169,6 @@ th input{
   width:50px ;
 }
 
-
-/* Okienko modalne - edycja kolumn */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -189,7 +187,6 @@ th input{
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  border-left: 5px solid #225496;
   max-width: 400px;
   width: 100%;
   max-height: 80vh;
@@ -262,8 +259,6 @@ th input{
 }
 
 
-
-/* Wiersz pojedynczego filtru w modalu */
 .filter-item {
   display: flex;
   align-items: center;
@@ -281,7 +276,6 @@ th input{
   border-color: #22549644;
 }
 
-/* Przycisk usuwania (czerwony iks) */
 .btn-remove {
   background-color: #ff6b6b;
   color: #ffffff;
@@ -301,7 +295,6 @@ th input{
   background-color: #fa5252;
 }
 
-/* Sekcja dodawania nowego filtru na dole modala */
 .add-filter-row {
   display: flex;
   gap: 10px;
@@ -326,38 +319,34 @@ th input{
   margin-bottom: 10px;
 }
 
-/* Przycisk główny (zakładka menu) */
 .coordinator-menu-btn {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
+  background-color: #225496cc;
+  color: #eee;
+  border: 1px solid #22549633;
   padding: 6px 15px;
   font-size: 14px;
   font-family: inherit;
   cursor: pointer;
-  border-radius: 0; /* Proste kąty jak w klasycznych systemach */
+  border-radius: 5px;
   box-shadow: none;
   transition: all 0.2s ease;
 }
-
-.coordinator-menu-btn:hover,
-.coordinator-menu-btn.active {
-  background-color: #e0e0e0;
-  border-color: #999;
-  color: #000;
+.coordinator-menu-btn.active{
+  background-color: #225496;
 }
 
-/* Rozwijana lista */
+
 .coordinator-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 100;
   background-color: #fff;
-  border: 1px solid #a0a0a0;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #22549644;
+  box-shadow: 3px 3px 8px #8883;
   min-width: 350px;
   text-align: left;
+  border-radius: 0 10px 10px 10px;
 }
 
 .coordinator-dropdown ul {
@@ -372,11 +361,11 @@ th input{
   color: #333;
   cursor: pointer;
   border-left: 3px solid transparent;
-  transition: background-color 0.15s;
+  transition: background-color 300ms;
   white-space: nowrap;
+  transition: 300ms;
 }
 
-/* Podświetlenie po naciśnięciu lub najechaniu (efekt Windows/Java App) */
 .coordinator-dropdown li:hover {
   background-color: #e6f0fa;
   border-left-color: #225496;
