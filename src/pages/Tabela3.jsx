@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import {
     flexRender,
     getCoreRowModel,
@@ -19,6 +19,18 @@ function Tabela3({ data }) {
     const [isFilterModalOpen, setIsFilterModalOpen]=useState(false);
     const [activeFilterCols, setActiveFilterCols] = useState(['regon','nazwa_nsk','miasto','ulica']);
     const [selectedNewFilter, setSelectedNewFilter]=useState('');
+    const [isCoordinatorMenuOpen, setIsCoordinatorMenuOpen]=useState(false);
+    const menuRef = useRef(null)
+
+    useEffect(()=>{
+        function handleClickOutside(event){
+            if(menuRef.current && !menuRef.current.contains(event.target)){
+                setIsCoordinatorMenuOpen(false);
+            }
+        }
+        document.addEventListener("mousedown",handleClickOutside);
+        return ()=>document.removeEventListener("mousedown",handleClickOutside)
+    },[menuRef])
 
     const columns = useMemo(() => [
         {
@@ -133,10 +145,49 @@ function Tabela3({ data }) {
                         )
                     })}
                 </div>
-                <div>
+                <div style={{display:'flex', flexDirection:'column', gap:'10px', paddingBottom:'5px'}}>
                     <button type="button" onClick={()=>setIsFilterModalOpen(true)}>Edytuj filtry</button>
                     <button type="button" onClick={()=>setIsColumnModalOpen(true)}>Edytuj liste wyświetlanych kolumn</button>
                 </div>
+            </div>
+            <div className="coordinator-menu-container" ref={menuRef}>
+                <button 
+                    type="button" 
+                    className={`coordinator-menu-btn ${isCoordinatorMenuOpen ? 'active' : ''}`}
+                    onClick={() => setIsCoordinatorMenuOpen(!isCoordinatorMenuOpen)}
+                >
+                    ustawienia (koordynator) ▾
+                </button>
+
+                {isCoordinatorMenuOpen && (
+                    <div className="coordinator-dropdown">
+                        <ul>
+                            <li onClick={() => { setIsFilterModalOpen(true); setIsCoordinatorMenuOpen(false); }}>
+                                edytuj listę pól filtrowania danych w tabeli
+                            </li>
+                            <li onClick={() => { setIsColumnModalOpen(true); setIsCoordinatorMenuOpen(false); }}>
+                                edytuj listę kolumn tabeli
+                            </li>
+                            
+                            {/* Opcjonalne dodatkowe pozycje ze zdjęcia */}
+                            <li onClick={() => setIsCoordinatorMenuOpen(false)}>
+                                przydzielanie jednostek
+                            </li>
+                            <li onClick={() => setIsCoordinatorMenuOpen(false)}>
+                                aktualizacja statusów
+                            </li>
+                            <li onClick={() => setIsCoordinatorMenuOpen(false)}>
+                                definicja migracji danych do kontroli
+                            </li>
+                            <li onClick={() => setIsCoordinatorMenuOpen(false)}>
+                                aktualizuj dane jednostek na podstawie danych w kartotece
+                            </li>
+                            <li onClick={() => setIsCoordinatorMenuOpen(false)}>
+                                ustawienia kartoteki
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
             {isColumnModalOpen&&(
             <div className='modal-overlay'>
@@ -252,6 +303,7 @@ function Tabela3({ data }) {
                     </div>
                 </div>
             )}
+            
             <div className="tabela">
                 <table style={{ width: '100%' }}>
                     <thead>
