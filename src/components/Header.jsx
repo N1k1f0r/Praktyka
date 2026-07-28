@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import '../styles/header-style.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HomeIcon from '@mui/icons-material/Home';
-let zalogowany=true
-const user={name:'Jan',lastname:'Kowal', role:'Admin'}
+import { useAuth } from '../context/AuthContext';
 function Header() {
+  const {user,isLoggedIn,logout}=useAuth();
   return (
     <div className='header'>
       <div style={{width:'240px'}}></div>
@@ -21,7 +21,7 @@ function Header() {
         <div className='account'>
           <AccountCircleIcon/>
             <p>
-              {zalogowany?'Witaj, '+user.name+' '+user.lastname:'Zaloguj'}
+              {isLoggedIn?'Witaj, '+user.firstname+' '+user.lastname:'Zaloguj'}
             </p>
         </div>
       </div>
