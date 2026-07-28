@@ -1,10 +1,10 @@
 import React from 'react'
-import KartotekaList from './KartotekaList'
+import Dashboard from './Dashboard.jsx'
 
 function Main() {
     return(
         <div>
-            <KartotekaList/>
+            <Dashboard/>
         </div>
     ) 
 }

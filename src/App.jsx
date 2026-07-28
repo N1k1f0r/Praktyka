@@ -7,26 +7,31 @@ import Footer from "./components/Footer"
 import Navbar from './components/Navbar';
 import Tabela from './components/Tabela.jsx';
 import Tabela2 from './components/Tabela2.jsx';
-import Tabela3 from './pages/Tabela3.jsx';
+import Tabela3 from './pages/KartotekaList.jsx';
+import Tabela4 from './pages/MUITabela.jsx';
 import KartotekaDetails from './pages/KartotekaDetails.jsx';
 import AddKartotekaItem from './components/AddKartotekaItem';
 import KartotekaEdit from './pages/KartotekaEdit.jsx';
 import {data} from './data/daneKartotek.js'
+import KartotekaList from './pages/KartotekaList.jsx';
+import Kartoteki from './pages/Kartoteki.jsx';
 
 function App() {
   return (
     <Router>
-      <Header title="Kartoteka SPD"/>
-      <Navbar/>
+      <Header/>
+      {/* <Navbar/> */}
       <div className='main'>
       <Routes>
         <Route path="/" element={<Main/>}/>
         <Route path="/kartoteka/:regon" element={<KartotekaDetails/>}/>
+        <Route path="/kartoteki" element={<Kartoteki/>}/>
         <Route path="/kartoteka/dodaj" element={<AddKartotekaItem/>}/>
         <Route path="/kartoteka/:regon/edytuj" element={<KartotekaEdit/>}/>
-        <Route path='/tabela' element={<Tabela data={data}/>}/>
-        <Route path='/tabela2' element={<Tabela2 data={data}/>}/>
-        <Route path='/tabela3' element={<Tabela3 data={data}/>}/>
+        {/* <Route path='/tabela' element={<Tabela data={data}/>}/> */}
+        {/* <Route path='/tabela2' element={<Tabela2 data={data}/>}/> */}
+        <Route path='/kartotekaList' element={<KartotekaList data={data}/>}/>
+        {/* <Route path='/tabela4' element={<Tabela4 data={data}/>}/> */}
       </Routes>    
       </div>
       <Footer/>

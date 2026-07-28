@@ -1,0 +1,32 @@
+.dashboard-card{
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 350px;
+
+}
+.dashboard-header{
+    padding: 20px;
+    background-color: #225496;
+    color:#eee;
+}
+.dashboard-main{
+    padding:15px;
+}
+.dashboard-main button{
+    display: block;
+    background-color: #eee;
+    color:#333;
+    border-left: 3px solid #5c5;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    text-align: left; 
+    transition: 300ms;
+}
+.dashboard-main button:hover{
+    background-color: #22549628;
+    transform: scale(1.025);
+    
+}

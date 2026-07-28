@@ -1,0 +1,31 @@
+.header{
+    width:100%;
+    background-color:#114488;
+    color:#eee;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.accountIcon{
+    font-size: 80px !important;
+}
+.account{
+    cursor: pointer;
+}
+.menu{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.menu{
+}
+.menu svg{
+    font-size: 80px !important;
+}
+a{
+    color:inherit;
+    text-decoration: inherit;
+}
+.header h1{
+    padding-bottom:0 !important;
+}

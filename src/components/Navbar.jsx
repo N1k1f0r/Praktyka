@@ -5,11 +5,11 @@ function Navbar() {
   return (
     <div className='navbar'>
         <Link to="/">Home</Link>
-        <Link to="/">Kartoteka</Link>
-        <Link to="/tabela">Tabela danych</Link>
-        <Link to="kartoteka/edytuj">Edycja</Link>
-        <Link to="/tabela2">Tabela danych2</Link>
-        <Link to="/tabela3">Tabela danych3</Link>
+        {/* <Link to="/tabela">Tabela danych</Link>
+        <Link to="/tabela2">Tabela danych2</Link> */}
+        <Link to="/kartotekaList">Lista Kartotek</Link>
+        <Link to="/kartoteki">Kartoteki</Link>
+        {/* <Link to="/tabela4">Tabela danych MUI</Link> */}
     </div>
   )
 }

@@ -1,0 +1,108 @@
+[
+    {
+        "id": "kadrowe",
+        "title": "SPRAWY KADROWE",
+        "items": [
+            {
+                "id": "urlopy",
+                "label": "urlopy i nieobecności"
+            },
+            {
+                "id": "szkolenia",
+                "label": "planowanie i realizacja szkoleń"
+            },
+            {
+                "id": "delegacje",
+                "label": "rejestr delegacji"
+            },
+            {
+                "id": "godziny",
+                "label": "wyjścia prywatne, służbowe i godziny nadliczbowe"
+            }
+        ]
+    },
+    {
+        "id": "sprawozdawczosc",
+        "title": "SPRAWOZDAWCZOŚĆ",
+        "items": [
+            {
+                "id": "kartoteki",
+                "label": "kartoteki"
+            },
+            {
+                "id": "kontrola",
+                "label": "kontrola"
+            },
+            {
+                "id": "naliczanie",
+                "label": "naliczanie"
+            },
+            {
+                "id": "tablice-bdl",
+                "label": "tablice BDL"
+            }
+        ]
+    },
+    {
+        "id": "programisci",
+        "title": "NARZĘDZIA PROGRAMISTÓW",
+        "items": [
+            {
+                "id": "baza-prod",
+                "label": "baza produkcyjna",
+                "variant": "success"
+            },
+            {
+                "id": "baza-test",
+                "label": "baza testowa",
+                "variant": "warning"
+            },
+            {
+                "id": "testowy-1",
+                "label": "testowy 1"
+            },
+            {
+                "id": "testowy-2",
+                "label": "testowy 2"
+            }
+        ]
+    },
+    {
+        "id": "dziennik",
+        "title": "DZIENNIK",
+        "items": [
+            {
+                "id": "pisma",
+                "label": "rejestr pism"
+            },
+            {
+                "id": "sprawy",
+                "label": "rejestr spraw"
+            }
+        ]
+    },
+    {
+        "id": "inne",
+        "title": "INNE",
+        "items": [
+            {
+                "id": "sprzet",
+                "label": "administracja sprzętem komputerowym"
+            }
+        ]
+    },
+    {
+        "id": "pomoc",
+        "title": "POMOC",
+        "items": [
+            {
+                "id": "spd",
+                "label": "centrum pomocy SPD+"
+            },
+            {
+                "id": "zgloszenie",
+                "label": "zgłoś uwagę lub propozycję"
+            }
+        ]
+    }
+]

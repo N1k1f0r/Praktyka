@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "imie": "Jan",
+    "nazwisko": "Kowal",
+    "email": "a.kowal@spd.pl",
+    "telefon": "+48 500 600 700",
+    "stanowisko": "Administrator Systemu",
+    "login": "admin",
+    "haslo": "admin"
+  },
+  {
+    "id": 2,
+    "imie": "Anna",
+    "nazwisko": "Kowalska",
+    "email": "a.kowalska@spd.pl",
+    "telefon": "+48 601 202 303",
+    "stanowisko": "Koordynator OZS",
+    "login": "user",
+    "haslo": "user"
+  }
+]
