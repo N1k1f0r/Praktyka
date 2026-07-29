@@ -14,6 +14,7 @@ import KartotekaList from './pages/KartotekaList.jsx';
 import Kartoteki from './pages/Kartoteki.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='/kartotekaList' element={<KartotekaList data={data}/>}/>
           {/* <Route path='/tabela4' element={<Tabela4 data={data}/>}/> */}
           <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
         </Routes>    
         </div>
         <Footer/>

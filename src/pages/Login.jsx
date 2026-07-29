@@ -11,14 +11,13 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Zapobiega przeładowaniu strony
+    e.preventDefault(); 
     setError('');
 
-    // Wywołujemy funkcję logującą z AuthContext
     const success = login(email, password);
 
     if (success) {
-      navigate('/'); // Sukces! Wracamy na główny dashboard
+      navigate('/');
     } else {
       setError('Nieprawidłowy adres e-mail lub hasło!');
     }
@@ -94,6 +93,22 @@ function Login() {
             }}
           >
             Zaloguj się
+          </button>
+          <button 
+            type="button"
+            style={{
+            backgroundColor: '#22549699',
+            color: '#fff',
+            border: 'none',
+            padding: '12px',
+            borderRadius: '5px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            transition: 'background 0.2s'
+            }}
+            onClick={()=>navigate('/register')}
+          >
+            Zerejestruj się
           </button>
         </form>
 
