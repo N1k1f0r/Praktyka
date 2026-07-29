@@ -61,9 +61,26 @@ export function AuthProvider({ children }) {
 
     return true
   }
+  const updateProfile = (updatedData)=>{
+    const updatedUser={...user, ...updatedData}
+
+    setUser(updatedUser)
+    localStorage.setItem('spd_user', JSON.stringify(updatedUser))
+
+    const updatedAllUsers = allUsers.map(u=>u.id === updatedUser.id?updatedUser:u)
+    setAllUsers(updatedAllUsers)
+
+    const usersToSave = updatedAllUsers.filter(u=>{
+      const original = usersData.find(jsonUser=>jsonUser.id===u.id)
+      return !original||JSON.stringify(original)!==JSON.stringify(u)
+    })
+    localStorage.setItem('spd_registered_users',JSON.stringify(usersToSave))
+
+    return true
+  }
 
   return (
-    <AuthContext.Provider value={{ user, isLoggedIn: !!user, login, logout, register }}>
+    <AuthContext.Provider value={{ user, isLoggedIn: !!user, login, logout, register, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );

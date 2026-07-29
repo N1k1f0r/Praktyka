@@ -15,6 +15,7 @@ import Kartoteki from './pages/Kartoteki.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import ProfileEdit from './pages/ProfileEdit.jsx';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           {/* <Route path='/tabela4' element={<Tabela4 data={data}/>}/> */}
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/profile-edit' element={<ProfileEdit/>}/>
         </Routes>    
         </div>
         <Footer/>

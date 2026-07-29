@@ -9,6 +9,11 @@ function Header() {
   const {user,isLoggedIn,logout}=useAuth();
   const [isDropdowOpen, setIsDropDownOpen]=useState(false);
   const navigate=useNavigate()
+  const edit = (e)=>{
+    e.stopPropagation()
+    setIsDropDownOpen(false)
+    navigate('/profile-edit')
+  }
   const toggleDropdown=()=>{
     if(isLoggedIn){
       setIsDropDownOpen(!isDropdowOpen)
@@ -52,7 +57,7 @@ function Header() {
                 <p>stanowisko: <strong>{user.position}</strong></p>
                 <div style={{textAlign:'center', width:'100%', marginTop:'20px'}}>
                   <button type="button" className='btn-logout' onClick={logout}>Wyloguj</button>
-                  <button type="button" >Edytuj dane</button>
+                  <button type="button" onClick={edit}>Edytuj dane</button>
                 </div>
               </div>
             )}
