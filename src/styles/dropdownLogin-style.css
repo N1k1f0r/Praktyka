@@ -1,0 +1,14 @@
+.dropdownLogin{
+    position: absolute;
+  top: 119%;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+  border: 1px solid #22549644;
+  box-shadow: 3px 3px 8px #8883;
+  min-width: 300px;
+  text-align: left;
+  border-radius: 10px 0 10px 10px;
+  color:#333;
+  padding: 20px;
+}

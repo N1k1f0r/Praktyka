@@ -405,3 +405,9 @@ th input{
   box-shadow: 0 0 0 #0000;
   transform: scale(0.97);
 }
+.btn-logout{
+  background-color: #ff6b6b;
+}
+.btn-logout:hover{
+  background-color: #fa5252;
+}
