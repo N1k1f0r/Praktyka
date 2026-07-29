@@ -10,7 +10,7 @@ function DashBoardCard({section}) {
             case 'kartoteki':
                 navigate('/kartoteki')
                 break
-            deafult:
+            default:
                 break
 
         }

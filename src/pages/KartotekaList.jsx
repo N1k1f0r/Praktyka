@@ -193,7 +193,7 @@ function KartotekaList({ data }) {
                     {activeFilterCols.map(colId=>{
                         const col = table.getColumn(colId);
                         if(!col) return null;
-                        const headerName= typeof col.columnDef.header === ' string' ? col.columnDef.header : col.id
+                        const headerName= typeof col.columnDef.header === 'string' ? col.columnDef.header : col.id
                         return( 
                             <label key={colId} style={{display: 'flex', alignItems:'center', gap:'5px', fontWeight:'bold'}}>
                                 {headerName}

@@ -5,9 +5,6 @@ import Header from "./components/Header"
 import Main from "./pages/Main.jsx"
 import Footer from "./components/Footer"
 import Navbar from './components/Navbar';
-// import Tabela from './components/Tabela.jsx';
-// import Tabela2 from './components/Tabela2.jsx';
-// import Tabela3 from './pages/KartotekaList.jsx';
 import Tabela4 from './pages/MUITabela.jsx';
 import KartotekaDetails from './pages/KartotekaDetails.jsx';
 import AddKartotekaItem from './components/AddKartotekaItem';

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import {data}from "../data/daneKartotek"
 import KartotekaItem from '../components/KartotekaItem'
 import AddKartotekaItem from '../components/AddKartotekaItem'
+import { Link } from 'react-router-dom'
 
 function Kartoteki() {
   const [pokazPoprawne, setPokazPoprawne] = useState(true);
@@ -18,26 +19,32 @@ function Kartoteki() {
   
   return (
     <>
-      <div className="filtry" style={{ marginBottom: '20px' }}>
-        <label style={{ marginRight: '15px' }}>
-          <input 
-            type="checkbox" 
-            checked={pokazPoprawne} 
-            onChange={(e) => setPokazPoprawne(e.target.checked)} 
-            style={{marginRight:'6px'}}
-          />
-          Pokaż poprawne
-        </label>
-        <br/>
-        <label>
-          <input 
-            type="checkbox" 
-            checked={pokazBledne} 
-            onChange={(e) => setPokazBledne(e.target.checked)}  
-            style={{marginRight:'6px'}}
-          />
-          Pokaż błędne
-        </label>
+      <div style={{display:'flex', justifyContent:'space-between'}}>
+
+        <div className="filtry" style={{ marginBottom: '20px' }}>
+          <label style={{ marginRight: '15px' }}>
+            <input 
+              type="checkbox" 
+              checked={pokazPoprawne} 
+              onChange={(e) => setPokazPoprawne(e.target.checked)} 
+              style={{marginRight:'6px'}}
+              />
+            Pokaż poprawne
+          </label>
+          <br/>
+          <label>
+            <input 
+              type="checkbox" 
+              checked={pokazBledne} 
+              onChange={(e) => setPokazBledne(e.target.checked)}  
+              style={{marginRight:'6px'}}
+              />
+            Pokaż błędne
+          </label>
+        </div>
+        <div>
+          <Link className='button' to="/kartotekaList">Zaawansowany widok kartotek</Link>
+        </div>
       </div>
       <div className='cardList'>
           {przefiltrowaneDane.map((item)=>(
