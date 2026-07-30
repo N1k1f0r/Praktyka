@@ -7,6 +7,7 @@ import {
     getPaginationRowModel,
     useReactTable,
 } from '@tanstack/react-table';
+import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import '../styles/KartotekaEdit.css';
 const STATUS_OPTIONS = ['Aktywny', 'Zawieszony', 'W likwidacji'];
@@ -24,7 +25,7 @@ function KartotekaList({ data }) {
     const menuRef = useRef(null);
     const [isStatusEditing, setIsStatusEditing]=useState(false);
     const [editedStatuses, setEditedStatuses]=useState({});
-
+    const navigate=useNavigate()
     const handleStatusChange = (rowId, value)=>{
         setEditedStatuses(prev =>({
             ...prev,
@@ -392,7 +393,7 @@ function KartotekaList({ data }) {
                     </thead>
                     <tbody>
                         {table.getRowModel().rows.map(row => (
-                            <tr key={row.id}>
+                            <tr key={row.id} onDoubleClick={()=>{navigate('/kartotekaList/'+row.original.regon)}}>
                                 {row.getVisibleCells().map(cell => (
                                     <td key={cell.id}>
                                         {flexRender(cell.column.columnDef.cell, cell.getContext())}

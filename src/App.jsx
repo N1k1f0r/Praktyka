@@ -33,6 +33,7 @@ function App() {
           {/* <Route path='/tabela' element={<Tabela data={data}/>}/> */}
           {/* <Route path='/tabela2' element={<Tabela2 data={data}/>}/> */}
           <Route path='/kartotekaList' element={<KartotekaList data={data}/>}/>
+          <Route path="/kartotekaList/:regon" element={<KartotekaDetails/>}/>
           {/* <Route path='/tabela4' element={<Tabela4 data={data}/>}/> */}
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
